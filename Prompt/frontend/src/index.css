@@ -667,14 +667,23 @@ input:focus {
   min-height: 100vh;
   background: linear-gradient(135deg, #6DD5ED 0%, #2193B0 50%, #86E3CE 100%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  flex-direction: column;
+}
+
+.auth-page-wrapper .header {
+  background-color: rgba(33, 147, 176, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 .auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
   width: 100%;
   max-width: 450px;
+  margin: 0 auto;
 }
 
 .auth-card {
@@ -802,6 +811,35 @@ input:focus {
   color: #1a7a92;
 }
 
+.public-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(33, 147, 176, 0.2);
+}
+
+.public-link-button {
+  background: linear-gradient(135deg, #6DD5ED 0%, #2193B0 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.public-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 147, 176, 0.4);
+}
+
 .error-message {
   background: #fee;
   color: #c33;
@@ -885,6 +923,66 @@ input:focus {
 .section-text {
   color: #34495e;
   line-height: 1.6;
+}
+
+.section-list {
+  margin: 0.5rem 0 0.5rem 1.5rem;
+  list-style: disc;
+  color: #34495e;
+}
+
+.section-list li {
+  margin-bottom: 0.3rem;
+  line-height: 1.6;
+}
+
+.subsection {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(134, 227, 206, 0.5);
+}
+
+.subsection h4 {
+  color: #2193B0;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.language-selector {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.language-label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.language-dropdown {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgba(33, 147, 176, 0.3);
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.language-dropdown:hover {
+  border-color: #2193B0;
+}
+
+.language-dropdown:focus {
+  outline: none;
+  border-color: #2193B0;
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2);
 }
 
 .back-button {

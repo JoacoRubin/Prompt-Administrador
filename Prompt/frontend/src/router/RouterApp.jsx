@@ -24,19 +24,8 @@ export function RouterApp() {
               <Home />
             </ProtectedRoute>}
         />
-        <Route path="/tutorial" element={
-          <Layout>
-            <Tutorial />
-          </Layout>
-        } />
-        <Route path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Dashboard />
-              </Layout>
-            </ProtectedRoute>}
-        />
+        <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

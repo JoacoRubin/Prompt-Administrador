@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -67,6 +67,12 @@ export function AuthPage() {
 
   return (
     <div className="auth-page-wrapper">
+      <header className="header">
+        <nav className="nav">
+          <Link to="/tutorial" className="nav-link">¿Cómo se usa?</Link>
+          <Link to="/dashboard" className="nav-link">Dashboard</Link>
+        </nav>
+      </header>
       <div className="auth-container">
         <div className="auth-card">
           <h1 className="auth-title">

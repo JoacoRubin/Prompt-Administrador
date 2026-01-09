@@ -24,7 +24,7 @@ if (!missingVars.length) {
         pass: process.env.PASS_GOOGLE_APP
       }
     })
-    console.log('✅ Transporter de email configurado correctamente')
+    // Email configurado
   } catch (error) {
     console.error('❌ Error configurando transporter de email:', error)
   }

@@ -18,7 +18,7 @@ const requiredEnvVars = {
   ADMIN_EMAIL: 'Email del administrador para notificaciones'
 }
 
-const optionalVars = ['PORT', 'EMAIL_USER', 'PASS_GOOGLE_APP', 'ADMIN_EMAIL']
+const optionalVars = ['PORT', 'EMAIL_USER', 'PASS_GOOGLE_APP', 'ADMIN_EMAIL', 'NODE_ENV', 'USE_HTTPS']
 
 export const validateEnv = () => {
   const missing = []
@@ -41,18 +41,17 @@ export const validateEnv = () => {
     process.exit(1)
   }
 
-  if (warnings.length > 0) {
-    console.warn('\n⚠️ Variables de entorno OPCIONALES faltantes:')
-    warnings.forEach(msg => console.warn(msg))
-    console.warn('💡 Algunas funcionalidades pueden no estar disponibles\n')
+  // Mostrar warnings solo si hay problemas críticos
+  if (warnings.length > 0 && process.env.NODE_ENV === 'production') {
+    console.warn('⚠️ Variables opcionales faltantes (solo importante en producción)')
   }
-
-  console.log('✅ Variables de entorno validadas correctamente\n')
 }
 
 // Exportar variables con valores por defecto
 export const config = {
   port: process.env.PORT || 1111,
+  env: process.env.NODE_ENV || 'development',
+  useHttps: process.env.USE_HTTPS === 'true',
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:5173',
   jwtSecret: process.env.JWT_SECRET,
   dbUri: process.env.URI_DB,

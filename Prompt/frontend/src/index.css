@@ -811,35 +811,6 @@ input:focus {
   color: #1a7a92;
 }
 
-.public-links {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(33, 147, 176, 0.2);
-}
-
-.public-link-button {
-  background: linear-gradient(135deg, #6DD5ED 0%, #2193B0 100%);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.public-link-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(33, 147, 176, 0.4);
-}
-
 .error-message {
   background: #fee;
   color: #c33;

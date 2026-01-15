@@ -1,5 +1,11 @@
 // config/env.js - Validación centralizada de variables de entorno
-process.loadEnvFile()
+try {
+  process.loadEnvFile()
+} catch (error) {
+  // En producción (Render, Vercel, etc.) el archivo .env no existe
+  // Las variables de entorno ya están configuradas en el sistema
+  console.log('No .env file found, using system environment variables')
+}
 
 const requiredEnvVars = {
   // Base de datos

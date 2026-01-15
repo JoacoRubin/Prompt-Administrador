@@ -1,8 +1,8 @@
-# 🎯 TaskApp - Administrador de Tareas por Voz
+# 🎯 JrubinsteinApp - Administrador de Tareas por Voz
 
 ## 📝 Descripción del Proyecto
 
-**TaskApp** es una aplicación web full-stack moderna que permite a los usuarios gestionar sus tareas de manera eficiente mediante **voz o texto**. La aplicación incorpora autenticación segura con JWT, recuperación de contraseña por email, y reconocimiento de voz para crear tareas sin necesidad de escribir.
+**JrubinsteinApp** es una aplicación web full-stack moderna que permite a los usuarios gestionar sus tareas de manera eficiente mediante **voz o texto**. La aplicación incorpora autenticación segura con JWT, recuperación de contraseña por email, y reconocimiento de voz para crear tareas sin necesidad de escribir.
 
 ### 🎯 Propósito
 Facilitar la gestión de tareas personales mediante una interfaz intuitiva que combina tecnologías web modernas con reconocimiento de voz, permitiendo a los usuarios crear, editar, completar y eliminar tareas de forma rápida y accesible.
@@ -36,6 +36,10 @@ Facilitar la gestión de tareas personales mediante una interfaz intuitiva que c
 - 🚀 **Render** - Hosting del backend (Node.js)
 - ⚡ **Vercel** - Hosting del frontend (React)
 - 🔐 **Variables de entorno (.env)** - Gestión segura de credenciales
+
+### **🌐 URLs de Producción**
+- **Backend (API)**: https://prompt-administrador-1.onrender.com
+- **Frontend (Web App)**: https://prompt-administrador.vercel.app
 
 ---
 
@@ -74,47 +78,9 @@ Durante el desarrollo de este proyecto se utilizó **GitHub Copilot** y **herram
   - "Crear animaciones CSS para feedback visual de acciones del usuario"
 - **Resultado**: Interfaz moderna con animaciones suaves y paleta de colores coherente
 
-### **7. Documentación**
-- **Prompts utilizados**: "Generar documentación completa README con secciones de instalación, uso y deployment"
-- **Resultado**: Este README y documentación inline en el código
-
-### **8. Templates de Email**
+### **7. Templates de Email**
 - **Prompt utilizado**: "Crear templates HTML responsivos para emails de recuperación de contraseña"
 - **Resultado**: Templates profesionales con estilos inline
-
-### **9. Configuración de Deployment**
-- Asistencia en la creación de archivos de configuración para Render y Vercel
-- Troubleshooting de problemas de CORS y variables de entorno
-
----
-
-## 📸 Capturas de Pantalla
-
-### 🔐 Página de Autenticación
-![Login/Registro](docs/screenshots/auth-page.png)
-*Sistema de login y registro con validación en tiempo real*
-
-### 📋 Dashboard de Tareas
-![Dashboard Principal](docs/screenshots/dashboard.png)
-*Vista principal con lista de tareas, reconocimiento de voz activo*
-
-### 🎤 Reconocimiento de Voz
-![Voz Activa](docs/screenshots/voice-recognition.png)
-*Interfaz durante la grabación de voz para crear tareas*
-
-### ✏️ Edición de Tareas
-![Edición Inline](docs/screenshots/task-edit.png)
-*Edición inline de tareas con guardado automático*
-
-### 🔒 Recuperación de Contraseña
-![Reset Password](docs/screenshots/forgot-password.png)
-*Sistema de recuperación de contraseña por email*
-
-### 📧 Email de Recuperación
-![Email Template](docs/screenshots/email-template.png)
-*Email HTML profesional recibido por el usuario*
-
----
 
 ## 🏗️ Arquitectura del Proyecto
 
@@ -196,34 +162,6 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend: http://localhost:1111
 
----
-
-## 🚀 Deployment en Producción
-
-### **Backend en Render**
-
-1. Crear cuenta en [Render.com](https://render.com)
-2. Conectar repositorio de GitHub
-3. Configurar:
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-4. Agregar variables de entorno:
-   - `URI_DB`, `JWT_SECRET`, `FRONTEND_URL`, `EMAIL_USER`, `PASS_GOOGLE_APP`, `ADMIN_EMAIL`
-5. Deploy automático en cada push a `main`
-
-### **Frontend en Vercel**
-
-1. Crear cuenta en [Vercel.com](https://vercel.com)
-2. Importar proyecto desde GitHub
-3. Configurar:
-   - **Framework Preset**: Vite
-   - **Root Directory**: frontend
-4. Agregar variable de entorno:
-   - `VITE_API_URL=https://tu-backend.onrender.com`
-5. Deploy automático
-
----
-
 ## 📚 Funcionalidades Principales
 
 ### ✅ Gestión de Tareas
@@ -259,7 +197,7 @@ npm run dev
 ## 👨‍💻 Autor
 
 **Joaquín Lautaro Rubinstein**
-- Universidad: UTN FRBA
+- Universidad: UTN 
 - Email: jrubinstein@frba.utn.edu.ar
 - Proyecto: Prompt Engineering 2026
 
@@ -267,34 +205,5 @@ npm run dev
 
 ## 📄 Licencia
 
-Este proyecto fue desarrollado con fines educativos para la materia de Prompt Engineering en UTN FRBA.
+Este proyecto fue desarrollado con fines educativos para la materia de Prompt Engineering en UTN.
 
----
-
-## 🙏 Agradecimientos
-
-- GitHub Copilot por asistencia en el desarrollo
-- Comunidad de React y Node.js
-- Profesores y compañeros de UTN FRBA
-
----
-
-## 📝 Notas Adicionales
-
-### **Variables de Entorno Críticas**
-⚠️ **NUNCA** subir el archivo `.env` a GitHub. Usar `.env.example` como plantilla.
-
-### **Configuración de Gmail**
-Para envío de emails se requiere una "Contraseña de Aplicación" de Google:
-1. Habilitar verificación en 2 pasos
-2. Ir a https://myaccount.google.com/apppasswords
-3. Generar contraseña para "Correo"
-4. Usar esa contraseña en `PASS_GOOGLE_APP`
-
-### **MongoDB Atlas**
-- Configurar IP Whitelist (0.0.0.0/0 para producción)
-- Crear usuario de base de datos con permisos de lectura/escritura
-
----
-
-**✨ Proyecto desarrollado con IA, pasión y mucho café ☕**

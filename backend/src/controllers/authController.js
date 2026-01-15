@@ -178,12 +178,19 @@ const forgotPassword = async (req, res) => {
     // Crear URL de reset
     const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`
 
-    // Enviar email usando servicio centralizado
-    await sendEmail({
-      to: user.email,
-      subject: '🔐 Recuperación de Contraseña - JrubinsteinApp',
-      html: resetPasswordEmailTemplate(user.username, resetUrl)
-    })
+    // Intentar enviar email (no bloquear si falla)
+    try {
+      await sendEmail({
+        to: user.email,
+        subject: '🔐 Recuperación de Contraseña - JrubinsteinApp',
+        html: resetPasswordEmailTemplate(user.username, resetUrl)
+      })
+      console.log(`Email de recuperación enviado a ${email}`)
+    } catch (emailError) {
+      console.error("Error al enviar email de recuperación:", emailError)
+      // Continuar sin fallar - el token se guardó en la DB
+      // En desarrollo, el usuario puede usar el token directamente si lo necesita
+    }
 
     return res.status(200).json({
       success: true,

@@ -30,10 +30,10 @@ const server = express()
 server.use(securityHeaders)
 server.use(customSecurityHeaders)
 
-// 🔒 Seguridad: Forzar HTTPS en producción
-if (config.env === 'production') {
-  server.use(forceHttpsMiddleware)
-}
+// 🔒 Seguridad: Forzar HTTPS en producción (deshabilitado - Render maneja HTTPS automáticamente)
+// if (config.env === 'production') {
+//   server.use(forceHttpsMiddleware)
+// }
 
 // 🔒 Seguridad: Sanitización NoSQL injection
 server.use(mongoSanitization)

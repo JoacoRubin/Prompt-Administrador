@@ -1,7 +1,12 @@
 // config/email.js - Configuración centralizada de email
 import nodemailer from "nodemailer"
 
-process.loadEnvFile()
+try {
+  process.loadEnvFile()
+} catch (error) {
+  // En producción el archivo .env no existe
+  console.log('No .env file found, using system environment variables')
+}
 
 // Validar variables de entorno requeridas
 const requiredEnvVars = ['EMAIL_USER', 'PASS_GOOGLE_APP', 'ADMIN_EMAIL']

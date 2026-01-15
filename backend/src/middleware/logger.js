@@ -3,7 +3,12 @@ import path from "path"
 import { sendEmail, getAdminEmail } from "../config/email.js"
 import { errorEmailTemplate } from "../templates/email.js"
 
-process.loadEnvFile()
+try {
+  process.loadEnvFile()
+} catch (error) {
+  // En producción el archivo .env no existe
+  console.log('No .env file found, using system environment variables')
+}
 
 const logDir = path.join(process.cwd(), "log")
 
